@@ -18,6 +18,23 @@ In a linux distro (I used an ubuntu 14.04 VM on a windows 8 machine)
         
         fsck.ext3 -f /media/yourpath/image-full-clanton.ext3
         resize2fs /media/yourpath/image-full-clanton.ext3 4009600
+        
+Test Connection
+---------------
+At this point you should be able to SSH to the board
+
+        ssh root@<ip address>
+        
+If you get an error that says something along the lines of:
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+you will need to use the following command to clean the issue up
+
+        perl -pi -e 's/\Q$_// if ($. == 8);' ~/.ssh/known_hosts
+
+You should now be able to SSH to the Galileo and run some basic commands in the environment
 
 Update Node Version
 -------------------

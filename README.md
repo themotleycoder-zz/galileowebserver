@@ -13,7 +13,7 @@ Inital Preperation
 
 Resize Partition
 ----------------
-By deafult the Intel provided partition is small, you will need to exaond it in order to accomodate all the node tools and the web server:
+By default the Intel provided partition is small, you will need to expand it in order to accomodate all the node tools and the web server:
 In a linux distro (I used an ubuntu 14.04 VM on a windows 8 machine)
         
         fsck.ext3 -f /media/yourpath/image-full-clanton.ext3
@@ -30,7 +30,7 @@ If you get an error that says something along the lines of:
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-you will need to use the following command to clean the issue up
+you will need to use the following command to clean the issue up (replace the number in the parens - in this case 8 - with line number given in the error message)
 
         perl -pi -e 's/\Q$_// if ($. == 8);' ~/.ssh/known_hosts
 
@@ -50,7 +50,7 @@ Now run the following command and it should come back with a result that establi
 
 Fix time issue
 --------------
-* if you get the following erro trying to run NPM installs: npm ERR! Error: CERT_NOT_YET_VALID
+* if you get the following error trying to run NPM installs: npm ERR! Error: CERT_NOT_YET_VALID
 * Run the following command using a valid time server (time servers:http://tf.nist.gov/tf-cgi/servers.cgi)
         
         rdate -s nist-time-server.eoni.com

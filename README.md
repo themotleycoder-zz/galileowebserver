@@ -64,3 +64,14 @@ Install Tools
 Setup Webserver
 ---------------
 
+At this point you just need to build a NodeJS based website (I like to use the Mean stack generator) and deploy it to your Galileo based node environment using a simple SCP command e.g.
+        
+        scp -r ./ root@192.168.1.1:~/web
+        
+Once you fire up the node server e.g.
+
+        node server
+        
+you should be able to browse to your Galileo webserver using your favorite web browser.  Now all you need to do is add some javascript codeto your server and you can monitor inputs/ouputs on the arduino based gpio pins.
+
+More to come...
